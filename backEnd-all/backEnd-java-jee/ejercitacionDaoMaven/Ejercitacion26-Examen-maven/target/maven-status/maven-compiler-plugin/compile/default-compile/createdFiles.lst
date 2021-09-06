@@ -1,0 +1,5 @@
+com/rueda/dao/settings/ConfiguracionJDBC.class
+com/rueda/dao/IDao.class
+com/rueda/dao/impl/OdontologoDaoH2.class
+com/rueda/service/OdontologoService.class
+com/rueda/model/Odontologo.class

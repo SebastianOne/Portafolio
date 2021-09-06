@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.rueda.service.OdontologoServiceTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 0.464 s <<< FAILURE! - in com.rueda.service.OdontologoServiceTest
+com.rueda.service.OdontologoServiceTest.delete  Time elapsed: 0.296 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.rueda.service.OdontologoServiceTest.delete(OdontologoServiceTest.java:66)
+
+com.rueda.service.OdontologoServiceTest.update  Time elapsed: 0.022 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.rueda.model.Odontologo.getNombre()" because "object" is null
+	at com.rueda.service.OdontologoServiceTest.update(OdontologoServiceTest.java:60)
+
+com.rueda.service.OdontologoServiceTest.readOne  Time elapsed: 0.028 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <juan> but was: <Juan>
+	at com.rueda.service.OdontologoServiceTest.readOne(OdontologoServiceTest.java:47)
+

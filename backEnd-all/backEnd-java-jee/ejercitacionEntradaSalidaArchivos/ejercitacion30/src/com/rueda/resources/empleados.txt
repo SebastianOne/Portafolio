@@ -1,0 +1,5 @@
+juan;perez;milegaja;345555.0
+juan;perez;milegaje;345555.0
+juan;perez;milegaji;345555.0
+juan;perez;milegajo;345555.0
+juan;perez;milegaju;345555.0
