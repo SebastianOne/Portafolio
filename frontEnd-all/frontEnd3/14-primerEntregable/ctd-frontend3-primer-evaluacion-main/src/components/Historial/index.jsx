@@ -18,11 +18,6 @@ export default class Historial extends Component {
         });
     }
 
-    shouldComponentUpdate(nextProps,nextState){
-        const respuesta = (this.props.historial !== nextProps.historial) || (this.props.seleccionAnterior !== nextProps.seleccionAnterior);
-        return respuesta;
-    }
-
 
     componentDidMount(){
         this.setState({

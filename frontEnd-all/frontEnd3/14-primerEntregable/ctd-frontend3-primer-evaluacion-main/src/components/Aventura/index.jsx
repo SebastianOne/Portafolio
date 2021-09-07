@@ -15,11 +15,6 @@ export default class Aventura extends Component {
     }
 
 
-    shouldComponentUpdate(nextProps,nextState){
-        const respuesta = (this.props.parrafo !== nextProps.parrafo) || (this.parrafoPrincipal !== nextState.parrafoPrincipal)
-        return respuesta;
-    }
-
     componentDidMount(){
         this.setState({parrafoPrincipal: this.props.parrafo});
     }
