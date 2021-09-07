@@ -10,6 +10,21 @@ export default class Seleccion extends Component {
             opcionB: ""
         }
     }
+
+
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            opcionA: nextProps.opciones.a,
+            opcionB: nextProps.opciones.b
+        });
+    }
+
+
+    shouldComponentUpdate(nextProps,nextState){
+        return (this.props.opcionA !== nextProps.opciones.a) || (this.state.opcionA !== nextState.opcionA);
+    }
+
+
     componentDidMount(){
         this.setState({
             opcionA: this.props.opciones.a,
@@ -17,9 +32,6 @@ export default class Seleccion extends Component {
         });
     }
 
-    shouldComponentUpdate(nextProps,nextState){
-        return (this.props.opcionA !== nextProps.opciones.a) || (this.state.opcionA !== nextState.opcionA);
-    }
 
     getOpcion=(event)=>{
         this.props.cambiarSeleccion(event.target.value);
@@ -29,12 +41,16 @@ export default class Seleccion extends Component {
 
     render() {
         return (
-            <div className="opciones">
+            <Fragment>
+                <div className="opciones">
                 <input className="botones" type="button" value="A" onClick={this.getOpcion}/>
                 <p className="opcion" key={uuidv4()}>{this.state.opcionA}</p>
+                </div>
+                <div className="opciones">
                 <input className="botones" type="button" value="B" onClick={this.getOpcion}/>
                 <p className="opcion" key={uuidv4()}>{this.state.opcionB}</p>
-            </div>
+                </div>
+            </Fragment>
         )
     }
 

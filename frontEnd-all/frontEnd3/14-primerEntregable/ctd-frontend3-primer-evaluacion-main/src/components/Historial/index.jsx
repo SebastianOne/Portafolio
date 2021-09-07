@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component} from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./Historial.module.css";
 
@@ -11,6 +11,19 @@ export default class Historial extends Component {
             historial: []
         }
     }
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            seleccionAnterior: nextProps.seleccionAnterior,
+            historial: nextProps.historial
+        });
+    }
+
+    shouldComponentUpdate(nextProps,nextState){
+        const respuesta = (this.props.historial !== nextProps.historial) || (this.props.seleccionAnterior !== nextProps.seleccionAnterior);
+        return respuesta;
+    }
+
+
     componentDidMount(){
         this.setState({
             seleccionAnterior: this.props.seleccionAnterior,
@@ -18,11 +31,12 @@ export default class Historial extends Component {
         });
     }
 
-    shouldComponentUpdate(nextProps,nextState){
-        return (this.props.historial !== nextProps.historial);
-    }
+
+
+
 
     render() {
+        
         return (
             <div className="recordatorio">
                 <p>Selección anterior: {this.state.seleccionAnterior}</p>

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component} from "react";
 import "./Aventura.module.css";
 
 export default class Aventura extends Component {
@@ -8,13 +8,22 @@ export default class Aventura extends Component {
             parrafoPrincipal: ""
         }
     }
+
+
+    componentWillReceiveProps(nextProps){
+        this.setState({parrafoPrincipal: nextProps.parrafo});
+    }
+
+
+    shouldComponentUpdate(nextProps,nextState){
+        const respuesta = (this.props.parrafo !== nextProps.parrafo) || (this.parrafoPrincipal !== nextState.parrafoPrincipal)
+        return respuesta;
+    }
+
     componentDidMount(){
         this.setState({parrafoPrincipal: this.props.parrafo});
     }
 
-    shouldComponentUpdate(nextProps,nextState){
-        return (this.props.parrafo !== nextProps.parrafo) || (this.parrafoPrincipal !== nextState.parrafoPrincipal);
-    }
 
 
     render() {
