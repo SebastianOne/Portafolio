@@ -7,6 +7,14 @@ export default class Aventura extends Component {
             parrafoPrincipal: ""
         }
     }
+    componentDidMount(){
+        this.setState({parrafoPrincipal: this.props.parrafo});
+    }
+
+    shouldComponentUpdate(nextProps,nextState){
+        return (this.props.parrafo !== nextProps.parrafo) || (this.parrafoPrincipal !== nextState.parrafoPrincipal);
+    }
+
 
     render() {
         return (

@@ -9,6 +9,16 @@ export default class Historial extends Component {
             historial: []
         }
     }
+    componentDidMount(){
+        this.setState({
+            seleccionAnterior: this.props.seleccionAnterior,
+            historial: this.props.historial
+        });
+    }
+
+    shouldComponentUpdate(nextProps,nextState){
+        return (this.props.historial !== nextProps.historial);
+    }
 
     render() {
         return (
