@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import "./Aventura.module.css";
 
 export default class Aventura extends Component {
     constructor(props) {
@@ -18,9 +19,9 @@ export default class Aventura extends Component {
 
     render() {
         return (
-            <Fragment>
+            <div className="historia">
                 <p>{this.state.parrafoPrincipal}</p>
-            </Fragment>
+            </div>
         )
     }
 

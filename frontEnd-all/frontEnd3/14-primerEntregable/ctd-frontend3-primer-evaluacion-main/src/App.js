@@ -42,7 +42,7 @@ class App extends Component{
   render(){
     return(
       <Fragment>
-        <div className="App">
+        <div className="layout">
         <Aventura parrafo={this.getElementoDatos().historia}/>
         <Seleccion opciones={this.getElementoDatos().opciones} cambiarSeleccion={this.handleClick}/>
         <Historial historial={this.state.historial} seleccionAnterior={this.state.seleccionAnterior}/>

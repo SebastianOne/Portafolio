@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./Seleccion.module.css";
 
 export default class Seleccion extends Component {
     constructor(props) {
@@ -28,12 +29,12 @@ export default class Seleccion extends Component {
 
     render() {
         return (
-            <Fragment>
-                <input type="button" value="A" onClick={this.getOpcion}/>
-                <p key={uuidv4()}>{this.state.opcionA}</p>
-                <input type="button" value="B" onClick={this.getOpcion}/>
-                <p key={uuidv4()}>{this.state.opcionB}</p>
-            </Fragment>
+            <div className="opciones">
+                <input className="botones" type="button" value="A" onClick={this.getOpcion}/>
+                <p className="opcion" key={uuidv4()}>{this.state.opcionA}</p>
+                <input className="botones" type="button" value="B" onClick={this.getOpcion}/>
+                <p className="opcion" key={uuidv4()}>{this.state.opcionB}</p>
+            </div>
         )
     }
 
