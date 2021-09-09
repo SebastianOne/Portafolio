@@ -42,13 +42,13 @@ export default class Seleccion extends Component {
     render() {
         return (
             <Fragment>
-                <div className="opciones">
+                <div className="opciones" key={uuidv4()}>
                 <input className="botones" type="button" value="A" onClick={this.getOpcion}/>
-                <p className="opcion" key={uuidv4()}>{this.state.opcionA}</p>
+                <p className="opcion" >{this.state.opcionA}</p>
                 </div>
-                <div className="opciones">
+                <div className="opciones" key={uuidv4()}>
                 <input className="botones" type="button" value="B" onClick={this.getOpcion}/>
-                <p className="opcion" key={uuidv4()}>{this.state.opcionB}</p>
+                <p className="opcion" >{this.state.opcionB}</p>
                 </div>
             </Fragment>
         )
