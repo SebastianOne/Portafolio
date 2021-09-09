@@ -7,7 +7,7 @@ import datos from "./components/data.json"
 class App extends Component{
   constructor(){
     super();
-    this.sizeCaminosArreglo = 5
+    this.sizeCaminosArreglo = ((datos.length-1)/2)+1
     this.state={
       posicion: 0,
       seleccionAnterior: "",
