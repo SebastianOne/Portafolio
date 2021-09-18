@@ -1,0 +1,33 @@
+[
+{
+    "titulo":"introduccion a la programación" ,
+    "estado": "terminada",
+    "descripcion": "fundamentos de JS"
+},
+{
+    "titulo":"bases de datos" ,
+    "estado": "repasar",
+    "descripcion": "fundamentos de mysql"
+},
+{
+    "titulo":"introduccion" ,
+    "estado": "pendiente",
+    "descripcion": "fundamentos de mysql"
+},
+{
+    "titulo":"metodologias" ,
+    "estado": "terminada",
+    "descripcion": "metodologias de trabajo"
+},
+{
+    "titulo":"ingenieria de software 1" ,
+    "estado": "repasar",
+    "descripcion": "repasar tipos de arquitecturas"
+},
+{
+    "titulo":"labor social" ,
+    "estado": "pendiente",
+    "descripcion": "clases pendientes"
+}
+
+]

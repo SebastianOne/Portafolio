@@ -1,0 +1,18 @@
+[
+{
+    "titulo":"introduccion a la programación" ,
+    "estado": "terminada",
+    "descripcion": "fundamentos de JS"
+},
+{
+    "titulo":"bases de datos" ,
+    "estado": "repasar",
+    "descripcion": "fundamentos de mysql"
+},
+{
+    "titulo":"introduccion" ,
+    "estado": "pendiente",
+    "descripcion": "fundamentos de mysql"
+}
+
+]

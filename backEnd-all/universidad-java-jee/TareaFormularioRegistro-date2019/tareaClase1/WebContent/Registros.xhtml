@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsf/core"
+      xmlns:e="http://java.sun.com/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Registros</title>
+</h:head>
+
+
+<h:body>
+	<center><h1>Listado de Personas Registradas</h1></center>
+	<table border="0" align="center">
+		<tr>
+			<th>Nombre</th>
+			<th>apellido</th>
+			<th>Teléfono</th>
+			<th>Edad</th>
+		</tr>
+		<ui:repeat var="per" value="#{listapersonas}" varStatus="status">
+		    <tr>
+			<td><h:outputText value="#{per.nombre}"/></td>
+			<td><h:outputText value="#{per.apellido}"/></td>
+			<td><h:outputText value="#{per.telefono}"/></td>
+			<td><h:outputText value="#{per.edad}"/></td>
+			</tr>
+		</ui:repeat>
+	</table> 
+</h:body>
+
+
+</html>

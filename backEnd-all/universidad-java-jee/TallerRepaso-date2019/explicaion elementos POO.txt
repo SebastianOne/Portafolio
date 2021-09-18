@@ -1,0 +1,19 @@
+los elemntos que utilice para la realizacion del taller en el lenguaje de programacion java son los siguientes:
+
+1.  abstraccion y herencia: utilice la abtraccion en una clase llamada persona, en donde en esta coloque un metodo abstracto, este metodo es abstracto porque es muy general y se va a extender
+en las clases que lo heredan, y en cada una va a ser muy diferente. y la herencia para que las otras clases creadas pueden heredar los atrivutos y metodos de esta clase , y no tener que escribir de 
+nuevo estos metodos y tributos en las otras clases esto ayuda mucho al ahorro de memoria , y el codigo este mejor organizado.
+
+2. encapsulamiento: este se utilizo en todas las clases , con esto garantizamos que los metodos y atrivutos esten en su clase correspondiente , y solo puedan ser modificados y mostrados por metio de los 
+"getters y setters" en el caso de los atributos , y en el caso de los metodos  con la forma que le corresponde a estos; y no tener problemas mas adelante durante la construccion de programa, ya  que 
+podria suceder si no se utilizara el encapsulamiento que  atrivutos sean modificados en clases diferentes a las que pertenecen.
+
+3.utilizamos la alta cohesion y el bajo acoplamiento: este patron es muy importante, ya que con el podemos hacerle modificaciones en el caso que se requiera a una clase , 
+ya que como no estan tan ligadas entre si , estas modificaciones no van a alterra el codigo de las demas clases y del programa en general , ademas permite hacer reciclaje de codigo.
+permite tambien que los metodos y atrivutos de cada clase concuerden con la misma.
+
+3.el polimorfismo: este esta ligado conla herencia este se implemento en los metodos que heredaron las clases de la clase Persona, ya que este metodo aunque tenga el mismo nombre , se va a implementar en cada clase de forma diferente 
+es un metodo que cambia segun la clase en la cual se este utilizando.
+
+
+
