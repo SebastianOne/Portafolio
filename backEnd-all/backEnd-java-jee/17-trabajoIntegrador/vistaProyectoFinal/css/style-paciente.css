@@ -158,3 +158,19 @@ table tr td {
   color: black;
   border-radius: 23.011px;
 }
+
+#id_domicilio,
+#id_paciente {
+  visibility: hidden;
+}
+
+.botones {
+  font-weight: bolder;
+  padding: 0px;
+  margin: 4% 0px 0px;
+  width: 70px;
+  height: 40px;
+  background-color: rgb(28, 209, 176);
+  color: black;
+  border-radius: 23.011px;
+}

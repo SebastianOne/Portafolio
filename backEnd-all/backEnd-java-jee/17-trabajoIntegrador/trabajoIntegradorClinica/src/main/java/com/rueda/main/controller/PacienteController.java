@@ -27,7 +27,7 @@ import java.util.List;
 @Controller
 @RestController
 @RequestMapping("/pacientes")
-@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:63342"})
+@CrossOrigin(origins = "*")
 public class PacienteController {
 
     @Autowired

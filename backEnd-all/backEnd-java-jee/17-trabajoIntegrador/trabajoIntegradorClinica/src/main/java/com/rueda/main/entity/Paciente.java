@@ -13,7 +13,6 @@ import java.util.Set;
 @Entity
 @Table(name="paciente")
 @NoArgsConstructor
-@JsonIgnoreProperties({"password"})
 public class Paciente {
 
     @Id
@@ -50,7 +49,7 @@ public class Paciente {
 
     @Column(name = "email", length = 100,unique = true)
     @Getter
-    private String Email;
+    private String email;
 
     @Column(name = "password", length = 200)
     @Getter

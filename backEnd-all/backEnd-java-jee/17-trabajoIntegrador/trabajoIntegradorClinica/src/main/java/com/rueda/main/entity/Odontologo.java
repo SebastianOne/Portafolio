@@ -12,7 +12,6 @@ import java.util.Set;
 @Entity
 @Table(name = "odontologo")
 @NoArgsConstructor
-@JsonIgnoreProperties({"password"})
 public class Odontologo {
 
     @Id

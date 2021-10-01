@@ -52,7 +52,7 @@ window.addEventListener("load",function(){
             else{
                 localStorage.setItem("jwt",JSON.stringify(json));
                 localStorage.setItem("email",email);
-                location.replace("http://localhost:63342/trabajoIntegradorClinica/static/paciente.html");
+                location.replace("http://127.0.0.1:5500/vistaProyectoFinal/paciente.html");
             }
         }).catch();
     }
@@ -68,7 +68,7 @@ window.addEventListener("load",function(){
             else{
                 localStorage.setItem("jwt",JSON.stringify(json));
                 localStorage.setItem("email",email);
-                location.replace("http://localhost:63342/trabajoIntegradorClinica/static/turno.html");
+                location.replace("http://127.0.0.1:5500/vistaProyectoFinal/turno.html");
             }
         }).catch();
     }
@@ -76,5 +76,3 @@ window.addEventListener("load",function(){
 })
 
     
-
-

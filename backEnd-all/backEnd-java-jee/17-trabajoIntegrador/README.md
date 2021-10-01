@@ -93,5 +93,16 @@ json:
         "provincia": "provincia nueva"
     }
 
+
+
 }
+
+
+
+GRUPO 3 – CÓDIGOS: 3,8,13,18,23,28,33 LOS SERES VIVOS Y SU HÁBITAT FINITO EN BOGOTÁ 
+cuales son las problematicas que lo tienen
+habitat limitado
+ver estadisticcas
+
+
 

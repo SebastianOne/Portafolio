@@ -38,7 +38,8 @@ public class PacienteService implements IPacienteService {
 
     @Override
     public Paciente insert(Paciente paciente)throws IncompleteDataException{
-        if(paciente.getNombre() == null || paciente.getApellido() == null || paciente.getFecha_alta() == null)
+        System.out.println(paciente.getPassword()+ "soy el passwordddedddddddddddddddddddddddd");
+        if(paciente.getNombre() == null || paciente.getApellido() == null || paciente.getFecha_alta() == null || paciente.getPassword() == null ||  paciente.getEmail() == null)
             throw new IncompleteDataException("falta por ingresar  datos obligatorios o debe corregir los datos proporcionados\ncomo datos obligatorios esta: nombre, apellido y fecha_alta ");
         domicilioService.insert(paciente.getDomicilio());
         return pacienteRepository.save(paciente);
