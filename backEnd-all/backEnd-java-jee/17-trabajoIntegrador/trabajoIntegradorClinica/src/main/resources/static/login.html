@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height ,initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style-login.css">
+    <script src="./js/login.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <aside>20% de descuento en todas las consultas!</aside>
+    
+    <header>
+        <img src="./img/logoHeader.png" >
+        <h2>Clinica Odontologica</h2>
+    </header>
+
+    <main>
+
+    <div class="login">
+        <section>
+            <article>
+                <div>
+                    <h2>Login</h2>
+                </div>
+                <div>
+                    <form>
+                        <input type="text" id="email" name="email" placeholder="Correo electronico" required >
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                        <select name="usuario" id="usuario">
+                            <option value="usuario" selected disabled>Seleccionar tipo de usuario</option>
+                            <option value="odontologo">Odontologo</option>
+                            <option value="paciente">Paciente</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                        <button type="submit">Entrar</button>
+                    </form>
+                </div>
+             </article>
+        </section>
+    </div>
+    
+    <footer><h3 class="texto-footer">Todos los derechos reservados a Juan sebastian Rueda - wireframe proporcionado por Digital House</h3></footer>
+</main>
+</body>
+</html>

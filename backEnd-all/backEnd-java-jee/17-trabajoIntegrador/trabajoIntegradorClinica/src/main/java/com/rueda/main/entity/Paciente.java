@@ -13,6 +13,7 @@ import java.util.Set;
 @Entity
 @Table(name="paciente")
 @NoArgsConstructor
+@JsonIgnoreProperties({"password"})
 public class Paciente {
 
     @Id
@@ -46,6 +47,14 @@ public class Paciente {
     @Getter
     @Setter
     private Domicilio domicilio;
+
+    @Column(name = "email", length = 100,unique = true)
+    @Getter
+    private String Email;
+
+    @Column(name = "password", length = 200)
+    @Getter
+    private String password;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "paciente")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler","paciente"})

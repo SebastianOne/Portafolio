@@ -2,7 +2,6 @@ los archivos de del 24 hasta el 29, estan pidiendo que se implemente API REST. e
 
 
 ---------------------------------------------------------------------------------
-
 CREATE TABLE domicilio(
     id_domicilio int PRIMARY KEY AUTO_INCREMENT,
     calle varchar(20) NOT NULL,
@@ -13,6 +12,8 @@ CREATE TABLE domicilio(
 
 CREATE TABLE paciente(
     id_paciente int PRIMARY KEY AUTO_INCREMENT,
+    email varchar(100) NOT NULL,
+    password varchar(200) NOT NULL,
     apellido varchar(30) NOT NULL,
     nombre varchar(40) NOT NULL,
     dni varchar(40) NOT NULL,
@@ -22,6 +23,8 @@ CREATE TABLE paciente(
 
 CREATE TABLE odontologo(
     id_odontologo int PRIMARY KEY AUTO_INCREMENT,
+    email varchar(100) NOT NULL,
+    password varchar(200) NOT NULL,
     apellido varchar(30) NOT NULL,
     nombre varchar(40) NOT NULL,
     matricula varchar(40) NOT NULL
@@ -30,8 +33,14 @@ CREATE TABLE odontologo(
 CREATE TABLE turno(
     id_turno int PRIMARY KEY AUTO_INCREMENT,
     id_odontologo int NOT NULL,
-    id_odontologo int NOT NULL,
+    id_paciente int NOT NULL,
     fecha_hora_turno DATETIME NOT NULL
+);
+
+CREATE TABLE administrador(
+    id_administrador int PRIMARY KEY AUTO_INCREMENT,
+    email varchar(100) NOT NULL,
+    password varchar(200) NOT NULL
 );
 
 
@@ -47,6 +56,14 @@ ALTER TABLE turno
 add constraint turno_odontologo_fk foreign key (id_odontologo)
 references odontologo(id_odontologo);
 
+
+INSERT INTO `odontologo`(`email`, `password`, `apellido`, `nombre`, `matricula`) VALUES ('odontologo@gmail.com','1234','pedros picapiedra','sadam housein','12344556')
+
+INSERT INTO `domicilio`( `calle`, `numero`, `localidad`, `provincia`) VALUES ('calle pierela',2,'localidad 1','provincia 1')
+
+INSERT INTO `paciente`(`email`, `password`, `apellido`, `nombre`, `dni`, `fecha_alta`, `id_domicilio`) VALUES ('paciente@gmail.com','123456','pardo rubio','andres felipe','dni1234','2021-01-01 12:05:01','1')
+
+INSERT INTO `administrador`(`email`, `password`) VALUES ('administrador@gmail.com','1234567')
 -------------------------------------------------------------------------------
 json:
 
@@ -64,5 +81,17 @@ json:
 
 }
 
+{
+    "nombre": "camilo andres5",
+    "apellido": "perez garzon4",
+    "dni": "12345678912345654",
+    "fecha_alta": "2020-12-12T12:24:23",
+    "domicilio":{
+        "calle": "calle garzon87",
+        "numero": 1,
+        "localidad":"localidad nueva",
+        "provincia": "provincia nueva"
+    }
 
+}
 

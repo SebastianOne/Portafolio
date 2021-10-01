@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0%;
+  margin: 0%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  display: flex;
+  font-size: 1.5rem;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  height: 4vh;
+  padding-left: 2%;
+  background-color: #1cd1b0;
+  color: black;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  background-color: #00669f;
+  color: white;
+  padding-left: 2%;
+  margin-bottom: 6vh;
+}
+
+header h2,
+nav a {
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  color: white;
+}
+.menu {
+  margin-left: 50vw;
+  width: 20vw;
+  align-self: end;
+}
+
+nav {
+  font-size: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section,
+article {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  height: 72vh;
+}
+
+div.pacientes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div h2 {
+  font-size: 300%;
+  font-family: "Inter", sans-serif;
+  padding: 0%;
+  margin: 0%;
+  margin-bottom: 3%;
+}
+
+input {
+  display: block;
+  width: 90%;
+  height: 40px;
+  margin-bottom: 2%;
+}
+select {
+  display: block;
+  width: 90%;
+  height: 40px;
+  margin-bottom: 2%;
+}
+button {
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+  width: 45%;
+  height: 40px;
+  background-color: #1cd1b0;
+  color: black;
+  border-radius: 23.011px;
+  margin-top: 4%;
+}
+
+.button1 {
+  background-color: #888888;
+  color: white;
+}
+
+p {
+  text-align: center;
+  width: 90%;
+  height: 30px;
+}
+
+footer {
+  background-color: #00669f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 6vh;
+}
+table {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+.cabecera {
+  background-color: turquoise;
+}
+table tr td {
+  width: 20vh;
+}
+
+.contenido {
+  overflow: scroll;
+}
+
+.button {
+  font-weight: bolder;
+  padding: 0px;
+  margin: 4% 0px 0px;
+  width: 45%;
+  height: 40px;
+  background-color: rgb(28, 209, 176);
+  color: black;
+  border-radius: 23.011px;
+}
