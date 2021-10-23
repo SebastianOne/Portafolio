@@ -1,0 +1,139 @@
+-- cracion de las tablas junto con las llaves primarias
+-- create schema universolector;
+
+CREATE SCHEMA universolector;
+USE universolector;
+
+CREATE TABLE AUTOR(
+	cod_autor int auto_increment,
+    apellido varchar(100) not null,
+    nombre varchar(100) not null,
+    constraint autor_pk primary key (cod_autor)
+);
+
+CREATE TABLE EDITORIAL(
+	cod_editorial int auto_increment,
+    razon_social varchar(100) not null,
+    telefono varchar(100) not null,
+    constraint editorial_pk primary key (cod_editorial)
+);
+
+CREATE TABLE LIBRO(
+	cod_libro int auto_increment,
+    cod_autor int not null,
+	cod_editorial int not null,
+    isbn varchar(13) NOT NULL,
+    titulo varchar(200) not null,
+    anio_escritura date,
+    anio_edicion date,
+    constraint libro_pk primary key (cod_libro)
+);
+
+CREATE TABLE VOLUMEN(
+	cod_volumen int auto_increment,
+    cod_libro int not null,
+    deteriorado bool,
+    constraint volumen_pk primary key (cod_volumen)
+);
+
+CREATE TABLE SOCIO(
+	cod_socio int auto_increment,
+    dni int,
+    apellido varchar(100),
+    nombre varchar(100),
+    direccion varchar(200),
+    localidad varchar(100),
+    constraint socio_pk primary key (cod_socio)
+);
+
+CREATE TABLE TELEFONOXSOCIO(
+	cod_telefono int auto_increment,
+    cod_socio int not null,
+    numero_telefono varchar(100) not null,
+    constraint telefonoxsocio_pk primary key (cod_telefono)
+);
+
+CREATE TABLE PRESTAMO(
+	cod_prestamo int auto_increment,
+    cod_socio int not null,
+    fecha date not null,
+    fecha_devolucion date,
+    fecha_tope date not null,
+    constraint prestamo_pk primary key (cod_prestamo)
+);
+
+CREATE TABLE PRESTAMOXVOLUMEN(
+	cod_prestamoxvolumen int auto_increment,
+    cod_prestamo int not null,
+    cod_volumen int not null,
+    constraint prestamoxvolumen_pk primary key (cod_prestamoxvolumen)
+);
+
+-- aca creo las llave foraneas de las tablas creadas anteriormente
+
+ALTER TABLE LIBRO
+add constraint libro_autor_fk foreign key (cod_autor)
+references AUTOR  (cod_autor),
+add constraint libro_editorial_fk foreign key (cod_editorial)
+references EDITORIAL (cod_editorial);
+
+
+ALTER TABLE VOLUMEN
+add constraint volumen_libro_fk foreign key (cod_libro)
+references LIBRO (cod_libro);
+
+
+ALTER TABLE TELEFONOXSOCIO
+add constraint telefonoxsocio_socio_fk foreign key (cod_socio)
+references SOCIO (cod_socio);
+
+
+ALTER TABLE PRESTAMO
+add constraint prestamo_socio_fk foreign key (cod_socio)
+references SOCIO (cod_socio);
+
+
+ALTER TABLE PRESTAMOXVOLUMEN
+add constraint prestamoxvolumen_prestamo_fk foreign key (cod_prestamo)
+references PRESTAMO (cod_prestamo),
+add constraint prestamoxvolumen_volumen_fk foreign key (cod_volumen)
+references VOLUMEN (cod_volumen);
+
+-- insercion de datos
+
+INSERT INTO AUTOR (apellido, nombre) VALUES ("Rowling","J.K");
+
+INSERT INTO EDITORIAL (razon_social, telefono) VALUES
+("Bloomsbury Publishing","54911564874"),
+("Scholastic","223483646"),
+("Pottermore Limited","5694839582"),
+("Editorial Salamandra","011-239-2343");
+
+INSERT INTO LIBRO (isbn, titulo, anio_escritura, cod_autor, anio_edicion, cod_editorial) VALUES
+("9781907545009","Harry Potter y la piedra filosofal","1997-2-1", 1 , "1997-3-1" , 4),
+("9789878000114","Harry Potter Y La Camara Secreta ","2020-1-2",1 , "2020-2-1",4);
+
+INSERT INTO VOLUMEN (cod_libro, deteriorado) VALUES (1,0),(2,0);
+
+
+INSERT INTO SOCIO (dni, apellido, nombre, direccion, localidad) VALUES
+(3000000,"PATRICIA","JOHNSON","28 MySQL Boulevard","QLD"),
+(2988800,"LINDA","WILLIAMS","23 Workhaven Lane","Alberta"),
+(2500000,"BARBARA","JONES","1411 Lillydale Drive","QLD"),
+(32980002,"LOIS","BUTLER","1688 Okara Way","Nothwest Border Prov"),
+(2313909,"ROBIN","HAYES","262 A Corua (La Corua) Parkway","Dhaka");
+
+INSERT INTO TELEFONOXSOCIO (numero_telefono, cod_socio) VALUES
+("54911-45636453",1),
+("54-11-47867654",1),
+("11498-2173",2),
+("11684736",3),
+("(54)-(911)-423-2434",4);
+
+
+INSERT INTO PRESTAMO (cod_socio, fecha, fecha_devolucion, fecha_tope) VALUES
+(1, "2020-1-1", "2020-1-7", "2020-1-7"),
+(1, "2020-1-7", "2020-1-15", "2020-1-14"),
+(2, "2020-3-4","2020-3-8","2020-3-11");
+
+INSERT INTO PRESTAMOXVOLUMEN (cod_prestamo,cod_volumen) VALUES (1,1),(2,2),(3,1),(3,2);

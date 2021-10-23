@@ -1,0 +1,28 @@
+-- 1. Obtener el nombre y apellido de los primeros 5 actores disponibles, utilizar
+-- aliases para mostrar los nombres de las columnas en español.;
+select * from actor limit 5;
+
+-- 2. Obtener un listado que incluya nombre, apellido y correo electrónico de los
+-- clientes (customers) inactivos, utilizar aliases para mostrar los nombres de
+-- las columnas en español.
+
+select first_name as nombre, last_name as apellido, email as correo from customer where active = 0;
+
+-- 3.  Obtener un listado de films incluyendo título, año y descripción de los films
+-- que tienen un rental_duration mayor a cinco. Ordenar por rental_duration de
+-- mayor a menor y utilizar aliases para mostrar los nombres de las columnas
+-- en español
+
+select 
+	title, release_year, description as descripcion  
+from 
+	film 
+where 
+	rental_duration > 5 
+	order by rental_duration desc ;
+    
+-- 4.Obtener un listado de alquileres (rentals) que se hicieron durante el mes de
+-- mayo de 2005, incluir en el resultado todas las columnas disponibles.
+
+select *, date_format(rental_date, "%Y-%M") from rental  having date_format(rental_date, "%Y-%M") = "2005-May";
+

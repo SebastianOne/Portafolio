@@ -1,0 +1,1 @@
+* En la carpeta "baseDeDatos-TDB1-parte1 tengo las ejercitaciones que realice correspondientes a lo que es el modelado de la base de datos y donde desarrolle en algunos ejercicios el modelo entidad-relacion y en todos desarrolle el modelo relacional.
